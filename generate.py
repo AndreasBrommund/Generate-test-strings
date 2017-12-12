@@ -10,12 +10,10 @@ debug = True
 is_empty_valid = False
 
 """Print accept or reject"""
-print_accept_or_reject = True
+print_accept_or_reject = True 
 
-all_permutations = set()
-valid_sequences = set()
-invalid_sequences = set()
 
+"""Accept string funtion"""
 def valid_test( sequence ): 
     
     num_zero = 0
@@ -35,6 +33,9 @@ def valid_test( sequence ):
 
     return num_zero != num_one
 
+all_permutations = set()
+valid_sequences = set()
+invalid_sequences = set()
 
 def generate_string( sequence ):
 
@@ -78,7 +79,10 @@ print("--------------------------------")
 print("Valid sequences")
 print("--------------------------------")
 if is_empty_valid:
-    print("")
+    if print_accept_or_reject:
+        print(" accept")
+    else:
+        print("")
 for sequence in valid_sequences:
     if print_accept_or_reject:
         print(sequence + " accept")
@@ -90,7 +94,10 @@ print("--------------------------------")
 print("Invalid sequences")
 print("--------------------------------")
 if not is_empty_valid:
-    print("")
+    if print_accept_or_reject:
+        print(" reject")
+    else:
+        print("")
 for sequence in invalid_sequences:
     if print_accept_or_reject:
         print(sequence + " reject")
